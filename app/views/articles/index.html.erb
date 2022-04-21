@@ -1,0 +1,14 @@
+<h1>Articles bro Articles</h1>
+<ul>
+  <% @articles.each do |record|%>
+    <li style='list-style:none'>
+      <%= record.title%>
+      <%= record.name%>
+      <%= link_to 'Show article', article_path(record), class: 'btn btn-secondary'%>
+      <%= link_to 'Edit article' , edit_article_path(record.id), class: 'btn btn-secondary'%>
+      <%= link_to 'Delete article', article_path(record), class: 'btn btn-danger',method: :Delete, data: { confirm: 'Are you sure?' } %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Create New Article', new_article_path, class: 'btn btn-secondary'%>
